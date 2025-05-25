@@ -25,6 +25,7 @@ import {
 } from './icons';
 import { memo } from 'react';
 import { useChatVisibility } from '@/hooks/use-chat-visibility';
+import { Globe, Lock, Share, Trash } from 'lucide-react';
 
 const PureChatItem = ({
   chat,
@@ -43,8 +44,8 @@ const PureChatItem = ({
   });
 
   return (
-    <SidebarMenuItem>
-      <SidebarMenuButton asChild isActive={isActive}>
+    <SidebarMenuItem className="m-2">
+      <SidebarMenuButton asChild isActive={isActive} className="p-2">
         <Link href={`/chat/${chat.id}`} onClick={() => setOpenMobile(false)}>
           <span>{chat.title}</span>
         </Link>
@@ -64,7 +65,7 @@ const PureChatItem = ({
         <DropdownMenuContent side="bottom" align="end">
           <DropdownMenuSub>
             <DropdownMenuSubTrigger className="cursor-pointer">
-              <ShareIcon />
+              <Share />
               <span>Share</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
@@ -76,7 +77,7 @@ const PureChatItem = ({
                   }}
                 >
                   <div className="flex flex-row gap-2 items-center">
-                    <LockIcon size={12} />
+                    <Lock size={12} />
                     <span>Private</span>
                   </div>
                   {visibilityType === 'private' ? (
@@ -90,7 +91,7 @@ const PureChatItem = ({
                   }}
                 >
                   <div className="flex flex-row gap-2 items-center">
-                    <GlobeIcon />
+                    <Globe />
                     <span>Public</span>
                   </div>
                   {visibilityType === 'public' ? <CheckCircleFillIcon /> : null}
@@ -103,7 +104,7 @@ const PureChatItem = ({
             className="cursor-pointer text-destructive focus:bg-destructive/15 focus:text-destructive dark:text-red-500"
             onSelect={() => onDelete(chat.id)}
           >
-            <TrashIcon />
+            <Trash />
             <span>Delete</span>
           </DropdownMenuItem>
         </DropdownMenuContent>

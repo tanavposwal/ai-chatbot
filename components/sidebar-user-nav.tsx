@@ -32,7 +32,7 @@ export function SidebarUserNav({ user }: { user: User }) {
 
   return (
     <SidebarMenu>
-      <SidebarMenuItem>
+      <SidebarMenuItem className="p-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             {status === 'loading' ? (

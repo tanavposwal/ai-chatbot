@@ -23,7 +23,7 @@ export const postRequestBodySchema = z.object({
       )
       .optional(),
   }),
-  selectedChatModel: z.enum(['chat-model', 'chat-model-reasoning']),
+  selectedChatModel: z.enum(['gemini-2.5-flash', 'chat-model-reasoning']),
   selectedVisibilityType: z.enum(['public', 'private']),
 });
 
