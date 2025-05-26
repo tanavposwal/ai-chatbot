@@ -2,6 +2,12 @@
 
 import type { User } from "next-auth";
 import { useRouter } from "next/navigation";
+import { Instrument_Serif } from "next/font/google";
+
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 import { PlusIcon } from "@/components/icons";
 import { SidebarHistory } from "@/components/sidebar-history";
@@ -33,7 +39,11 @@ export function AppSidebar({ user }: { user: User | undefined }) {
                 setOpenMobile(false);
               }}
               className="flex flex-row gap-3 items-center justify-center h-full">
-              <span className="text-xl font-semibold px-2 py-1 hover:bg-muted rounded-md cursor-pointer opacity-70">
+              <span
+                className={
+                  "text-xl font-semibold px-2 py-1 hover:bg-muted rounded-md cursor-pointer opacity-70 " +
+                  serif.className
+                }>
                 Chatbot
               </span>
             </Link>

@@ -23,8 +23,10 @@ export function SidebarToggle({
           onClick={toggleSidebar}
           variant="outline"
           size="icon"
-          className="p-2 h-fit">
-          {open ? <PanelLeftClose /> : <PanelLeft />}
+          className="p-2 h-fit w-fit">
+          <span className="flex items-center justify-center">
+            {open ? <PanelLeftClose /> : <PanelLeft />}
+          </span>
         </Button>
       </TooltipTrigger>
       <TooltipContent align="start">Toggle Sidebar</TooltipContent>
