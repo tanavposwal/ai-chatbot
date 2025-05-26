@@ -258,12 +258,8 @@ export const ThinkingMessage = () => {
             "group-data-[role=user]/message:bg-muted": true,
           }
         )}>
-        <div className="size-8 flex items-center rounded-full justify-center ring-1 shrink-0 ring-border">
-          <SparklesIcon size={14} />
-        </div>
-
         <div className="flex flex-col gap-2 w-full">
-          <div className="flex flex-col gap-4 text-muted-foreground">
+          <div className="flex flex-col gap-4 text-muted-foreground animate-pulse">
             Thinking...
           </div>
         </div>

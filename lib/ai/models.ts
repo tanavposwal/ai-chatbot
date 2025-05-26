@@ -13,8 +13,13 @@ export const chatModels: Array<ChatModel> = [
     description: 'Primary google model for all-purpose chat',
   },
   {
-    id: 'chat-model-reasoning',
-    name: 'Reasoning model',
-    description: 'Uses advanced reasoning',
+    id: 'deepseek-r1',
+    name: 'Deepseek Reasoning Model',
+    description: 'Deepseeks flagship model for reasoning',
+  },
+  {
+    id: 'qwen-qwq-32b',
+    name: 'Qwens Qwq Model',
+    description: 'Qwens most advanced model for reasoning',
   },
 ];

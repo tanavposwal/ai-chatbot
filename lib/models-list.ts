@@ -5,7 +5,7 @@ const modelsList = [
     description: 'Primary google model for all-purpose chat',
   },
   {
-    id: 'chat-model-reasoning',
+    id: 'deepseek-r1',
     name: 'Reasoning model',
     description: 'Uses advanced reasoning',
   },

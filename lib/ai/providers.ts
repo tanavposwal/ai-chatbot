@@ -4,28 +4,18 @@ import {
   wrapLanguageModel,
 } from 'ai';
 import { google } from '@ai-sdk/google';
-import { isTestEnvironment } from '../constants';
-import {
-  artifactModel,
-  chatModel,
-  reasoningModel,
-  titleModel,
-} from './models.test';
+import { createOpenRouter } from '@openrouter/ai-sdk-provider';
 
-export const myProvider = isTestEnvironment
-  ? customProvider({
-      languageModels: {
-        'chat-model': chatModel,
-        'chat-model-reasoning': reasoningModel,
-        'title-model': titleModel,
-        'artifact-model': artifactModel,
-      },
-    })
-  : customProvider({
+const openrouter = createOpenRouter({
+  apiKey: process.env.OPEN_ROUTER_API_KEY,
+});
+
+export const myProvider = customProvider({
       languageModels: {
         'gemini-2.5-flash': google('gemini-2.5-flash-preview-04-17'),
-        'artifact-model': google('gemini-2.5-flash-preview-04-17'),
-        'chat-model-reasoning': google('gemini-2.5-flash-preview-04-17'),
+        'artifact-model': openrouter.chat('deepseek/deepseek-r1-zero:free'),
+        'deepseek-r1': openrouter.chat('deepseek/deepseek-r1-zero:free'),
+        'qwen-qwq-32b': openrouter.chat('qwen/qwq-32b:free'),
         'title-model': google('gemini-2.0-flash-lite'),
       },
       // imageModels: {
